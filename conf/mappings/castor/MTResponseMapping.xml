@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<mapping>
+   <description>mapping an MTResponse object to the SoapSendSms response</description>
+
+   <!-- mapping for class 'Response' -->
+   <class name="com.aql.message.mt.MTResponse">
+        <map-to xml="SoapSendSmsResponse" ns-uri="http://soap.sendsms.aql.com" />
+
+        <field name="responseCode" type="string" >
+            <bind-xml name="responsecode" node="element"/>
+        </field>
+
+        <field name="description" type="string" >
+            <bind-xml name="description" node="element"/>
+        </field>
+
+    </class>
+</mapping>

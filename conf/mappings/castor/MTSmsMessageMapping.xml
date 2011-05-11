@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<mapping>
+    <description>mapping a MTSmsMessage object to the SOAP XML schema as outlined by AQL SoapSendSms service</description>
+
+    <!-- mapping for class 'SMSMessage' -->
+    <class name="com.aql.message.mt.sms.MTSmsMessage">
+        <map-to xml="SoapSendSms" ns-uri="http://soap.sendsms.aql.com" ns-prefix="soap" />
+
+        <field name="message" type="string">
+            <bind-xml name="message" node="element"/>
+        </field>
+
+        <field name="originator" type="string">
+            <bind-xml name="originator" node="element"/>
+        </field>
+
+        <field name="messageType" type="string">
+            <bind-xml name="messagetype" node="element"/>
+        </field>
+
+        <field name="destinationArray" type="string" collection="array" >
+            <bind-xml name="number" location="destinationarray"/>
+        </field>
+
+        <field name="callback" type="com.aql.message.mt.Callback" >
+            <bind-xml name="dlrep" node="element"/>
+        </field>
+    </class>
+
+    <class name="com.aql.message.mt.Callback">
+        <field name="callbackUrl" type="string">
+            <bind-xml name="callbackurl" node="element"/>
+        </field>
+
+        <field name="type" type="string">
+            <bind-xml name="callbacktype" node="element"/>
+        </field>
+    </class>
+
+</mapping>

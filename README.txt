@@ -65,8 +65,8 @@ Now in your own code you can access the bean and send messages by creating an MT
 
 
 MTSmsMessage mtMessage = new MTSmsMessage();
-mtMessage.setDestinationArray(new String[] {"+447538178963"});
-mtMessage.setMessage(message.getContent());
+mtMessage.setDestinationArray(new String[] {"+44........"});
+mtMessage.setMessage("Hello, this is a test message");
         
 try {
     aqlSOAPClient.sendMTMessage(mtMessage);
